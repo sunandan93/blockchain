@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import JerseyCard from './components/JerseyCard';
 import JerseyMarketplaceABI from './blockchain/JerseyMarketplaceABI.json';
 import './App.css';
+import CryptoPriceDisplay from './components/CryptoPriceDisplay';
 
 function App() {
     const [web3, setWeb3] = useState(null);
@@ -11,6 +12,7 @@ function App() {
     const [account, setAccount] = useState(null);
     const [ethBalance, setEthBalance] = useState('0');
 
+    
     useEffect(() => {
         if (window.ethereum) {
             const web3Instance = new Web3(window.ethereum);
@@ -113,12 +115,16 @@ function App() {
 		];
 
     return (
+        
         <div className="App">
             <Navbar />
             {!account && <button onClick={connectWallet} className="connect-wallet-button">Connect Wallet</button>}
             {account && <p>Connected Account: {account}</p>}
             <p>ETH Balance of 0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8: {ethBalance} ETH</p>
-            
+            <div>
+    {/* Other components */}
+    <CryptoPriceDisplay cryptoName="ethereum" />
+  </div>
             <div className="jersey-container">
                 {jerseys.map(jersey => (
                     <JerseyCard 

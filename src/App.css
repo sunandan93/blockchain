@@ -86,6 +86,27 @@ nav h1 {
   border-radius: 8px;
   transition: background-color 0.3s ease;
 }
+/* App.css */
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
 
 
